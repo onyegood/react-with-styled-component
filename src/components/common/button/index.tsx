@@ -3,8 +3,8 @@ import { COLOR_VARIANT, getColor } from 'lib';
 import { getSize, ITEM_SIZE } from 'lib';
 import { ThemeProps } from 'components/themes';
 
-interface Props {
-  color?: COLOR_VARIANT;
+export interface ButtonProps {
+  color: COLOR_VARIANT;
   size?: ITEM_SIZE;
   rounded?: boolean;
 }
@@ -13,9 +13,9 @@ interface AppThemeProps {
   theme: ThemeProps
 }
 
-const Button = styled.button<Props>`
+const Button = styled.button<ButtonProps>`
   color: ${({ theme }: AppThemeProps) => theme.whiteColor};
-  background: ${({ color = 'primary', theme }) => getColor(color, theme)};
+  background: ${({ color, theme }) => getColor(color, theme)};
   ${({ size }) => getSize(size)};
   border-radius:  ${({ rounded }) => rounded ? '50px' : ''};
   box-shadow: none;

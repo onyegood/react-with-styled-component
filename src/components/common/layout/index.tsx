@@ -2,11 +2,11 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { Header } from 'components/common';
 
-interface Props {
+export interface LayoutProps {
   children: ReactNode;
 }
 
-const Container = styled.main<Props>`
+export const Container = styled.main<LayoutProps>`
   max-width: 800px;
   margin: 80px auto 0 auto;
   padding: 0 16px;
@@ -14,7 +14,7 @@ const Container = styled.main<Props>`
   font-family: 'Open Sans';
 `;
 
-const PageLayout: React.FC<Props> = ({ children, ...props }) => {
+const PageLayout: React.FC<LayoutProps> = ({ children, ...props }) => {
   return (
     <>
       <Header />

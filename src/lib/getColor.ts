@@ -11,5 +11,7 @@ export const getColor = (variant: COLOR_VARIANT, theme: ThemeProps) => {
       return theme.dangerColor;
     case 'success':
       return theme.successColor;
+    default:
+      return theme.primaryColor;
   }
 };
